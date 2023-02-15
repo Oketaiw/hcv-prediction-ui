@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+
 import {
 	Button,
 	Checkbox,
@@ -19,6 +21,7 @@ import {
 import { useFormik } from "formik";
 import * as yup from "yup";
 export default function Register() {
+	const navigate = useNavigate()
 	const schema = yup.object().shape({
 		password: yup.string().required("Password is required"),
 		email: yup
@@ -53,6 +56,7 @@ export default function Register() {
 			gender: "",
 		},
 		onSubmit: (values) => {
+			navigate("/login")
 			console.log(values);
 		},
 	});
@@ -172,9 +176,9 @@ export default function Register() {
 									value={form.values.gender}
 									onChange={form.handleChange}
 								>
-									<option value="male">Option 1</option>
-									<option value="female">Option 2</option>
-									<option value="option3">Option 3</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									
 								</Select>
 								<FormErrorMessage>
 									{form.errors.gender}

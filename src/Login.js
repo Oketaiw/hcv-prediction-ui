@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from 'react-router-dom';
 import {
 	Button,
 	Checkbox,
@@ -20,11 +20,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 export default function Login() {
+	const navigate = useNavigate()
 	const schema = yup.object().shape({
 		password: yup.string().required("Password is required"),
 		email: yup
 			.string()
-			.email()
 			.required("Email is required"),
 	});
 
@@ -35,6 +35,7 @@ export default function Login() {
 			password: "",
 		},
 		onSubmit: (values) => {
+			navigate("/dashboard/app")
 			console.log(values);
 		},
 	});

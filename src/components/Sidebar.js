@@ -155,6 +155,29 @@ const NavItem = ({ icon, children, path,...rest }) => {
 					{children}
 				</Flex>
 			)}
+			
+			<Flex
+					align="center"
+					p="2"
+					mx="2"
+					borderRadius="md"
+					role="group"
+					cursor="pointer"
+				
+					{...rest}
+				>
+					{icon && (
+						<Icon
+							mr="4"
+							fontSize="16"
+							_groupHover={{
+								// color: "white",
+							}}
+							as={icon}
+						/>
+					)}
+					{children}
+				</Flex>
 		</Link>
 	);
 };

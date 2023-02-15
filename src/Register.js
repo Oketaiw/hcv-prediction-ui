@@ -74,6 +74,7 @@ export default function Register() {
 				</Flex>
 			</Show>
 			<Flex
+			backgroundColor={"gray.100"}
 				p={8}
 				flex={1}
 				align={"center"}

@@ -1,20 +1,14 @@
 import React from 'react'
 import {
 	Button,
-	Checkbox,
 	Flex,
 	FormControl,
 	FormLabel,
-	Heading,
 	Input,
-	Link,
 	Stack,
 	// InputGroup,
 	// InputRightElement,
-	Show,
-	Text,
 	FormErrorMessage,
-	Select,
         Card,
             CardBody,
 } from "@chakra-ui/react";

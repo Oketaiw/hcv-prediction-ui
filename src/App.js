@@ -9,7 +9,9 @@ import Register from "./Register";
 import Login from "./Login";
 import Dashboard from "Dashboard";
 import Home from "Home";
-import Hcvtest from "Hcvtest"
+import Hcvtest from "Hcvtest";
+import Results from "Results"
+
 
 function App() {
 	return (
@@ -26,7 +28,8 @@ function App() {
 						element={<Navigate replace to="app" />}
 					/>
 					<Route path="app" element={<Home />} />
-					<Route path="text" element={<Hcvtest />} />
+					<Route path="text" element={<Hcvtest />}/>
+					<Route path="result" element={<Results/>}/>
 				</Route>
 
 			</Routes>

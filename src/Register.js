@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {
 	Button,
 	Checkbox,
-	Flex,
+	Text,
 	FormControl,
 	FormLabel,
 	Heading,
@@ -14,9 +14,9 @@ import {
 	// InputGroup,
 	// InputRightElement,
 	Show,
-	Text,
 	FormErrorMessage,
 	Select,
+	Flex,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -61,29 +61,32 @@ export default function Register() {
 		},
 	});
 	return (
-		<Stack
-			minH={"100vh"}
-			direction={{ base: "column", md: "row" }}
+<Stack
+ minH={"100vh"}
+ direction={{base: "column", md: "row"}}>
+	<Show above="lg">
+		<Flex
+		flex={1}
+		p={8}
+		justify="center"
+		alignItems="center"
 		>
-			<Show above="lg">
-				<Flex
-					flex={1}
-					p={8}
-					justify="center"
-					alignItems="center"
-				>
-					<Text fontSize="5xl">
-						Welcome To Diagnosis Portal{" "}
-					</Text>
-				</Flex>
-			</Show>
-			<Flex
-			backgroundColor={"gray.100"}
-				p={8}
-				flex={1}
-				align={"center"}
-				justify={"center"}
-			>
+			<Text fontSize="5xl">
+				Welcome To Diagnosis Portal{" "}
+			</Text>
+
+		</Flex>
+	</Show>
+	<Flex 
+	 backgroundColor={"gray.100"}
+	 flex={1}
+	 p={8}
+	 justify="center"
+	 align="center"
+	 >
+		
+			
+		
 				<Stack spacing={4} w={"full"} maxW={"md"}>
 					<Heading fontSize={"2xl"}>Sign Up</Heading>
 					<form onSubmit={form.handleSubmit}>

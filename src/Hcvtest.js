@@ -1,23 +1,26 @@
 import React from "react"
-import {
+import { useNavigate } from "react-router-dom"
+import { 
 	Button,
 	Flex,
 	FormControl,
 	FormLabel,
 	Input,
 	Stack,
-	// InputGroup,
-	// InputRightElement,
 	FormErrorMessage,
 	Card,
 	CardBody,
+	CardHeader,
+	Text,
+	Heading,
 } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import * as yup from "yup"
 export default function Hcvtest() {
+	const navigate = useNavigate()
 	async function predict(predictionInput) {
 		console.log(predictionInput)
-		const response = await fetch("http://localhost:3000/predict", {
+		const response = await fetch("http://localhost:4000/predict", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -65,8 +68,91 @@ export default function Hcvtest() {
 			console.log(prediction)
 		},
 	})
-
 	return (
+		<Flex 
+		gap={7}
+		wrap="wrap">
+
+<Card w="xs" backgroundColor='white'>
+								<CardBody>
+							<CardHeader><Card backgroundColor='lightblue' h='12' w='20vw'><Heading size='md'>MEDICAL HISTORY</Heading></Card></CardHeader>
+
+										
+						<CardHeader><Card backgroundColor='lightblue' w='20vw' h='12' size='md'><Heading size="md">
+										PATIENTS</Heading>
+									<Text>Search</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Oke T.</b>
+									</Text> 
+									<Text>42 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Iyiade S.</b>
+									</Text>
+									<Text>21 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+									Obatimehin R.</b>
+									</Text>
+									<Text>22 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Ilekoya D.</b>
+									</Text>
+									<Text>14 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										GeorgE E.</b>
+									</Text>
+									<Text>19 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Oduwole O.</b>
+									</Text>
+									<Text>27 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Olaiya K.</b>
+									</Text>
+									<Text>31 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Adeleye M.</b>
+									</Text>
+									<Text>34 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Raji I.</b>
+									</Text>
+									<Text>22 years</Text>
+									</Card></CardHeader>
+
+									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
+										Ayodele A.</b>
+									</Text>
+									<Text>20 years</Text>
+									</Card></CardHeader>
+									</CardBody>
+									</Card>
+
+
+
+
+
+
+
+
+
 		<Card w="lg">
 			<CardBody>
 				<Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
@@ -193,12 +279,15 @@ export default function Hcvtest() {
 									/>
 									<FormErrorMessage>{form.errors.prot}</FormErrorMessage>
 								</FormControl>
-								<Button type="submit"> SUBMIT </Button>
+								<Button onClick={() => navigate("/dashboard/result")
+							}>SUBMIT</Button>
+								
 							</form>
 						</Stack>
 					</Flex>
 				</Stack>
 			</CardBody>
 		</Card>
+		</Flex>
 	)
 }

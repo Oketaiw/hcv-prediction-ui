@@ -1,0 +1,73 @@
+[
+	{
+		"name": "Oke T.",
+		"age": "42",
+		"gender": "female",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+
+	{
+		"name": "Iyiade S.",
+		"age": "21",
+		"gender": "female",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Obatimehin R.",
+		"age": "22",
+		"gender": "female",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Ilekoya D.",
+		"age": "19",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "George E.",
+		"age": "19",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Oduwole O.",
+		"age": "27",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Olaiya K.",
+		"age": "31",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Adeleye M.",
+		"age": "34",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Raji I.",
+		"age": "22",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	},
+	{
+		"name": "Ayodele A.",
+		"age": "20",
+		"gender": "male",
+		"bloodGroup": "O+",
+		"genotype": "AA"
+	}
+]

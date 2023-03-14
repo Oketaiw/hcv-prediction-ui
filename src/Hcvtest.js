@@ -1,6 +1,6 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { 
+import { useLocation, useNavigate } from "react-router-dom"
+import {
 	Button,
 	Flex,
 	FormControl,
@@ -16,8 +16,12 @@ import {
 } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import * as yup from "yup"
+import Patients from "components/PatientWrapper"
+import patients from "data/patients.json"
 export default function Hcvtest() {
 	const navigate = useNavigate()
+	const patient  = useLocation().state?.patient
+
 	async function predict(predictionInput) {
 		console.log(predictionInput)
 		const response = await fetch("http://localhost:4000/predict", {
@@ -48,9 +52,8 @@ export default function Hcvtest() {
 		validationSchema: schema,
 		initialValues: {},
 		onSubmit: async (values) => {
-			const age = 20
-			const sex = 1
-
+			const age = +patient.age
+			const sex = { male: 1, female: 0 }[patient.gender]
 			const prediction = await predict({
 				age,
 				sex,
@@ -65,229 +68,151 @@ export default function Hcvtest() {
 				ggt: values.gamma,
 				crea: values.crea,
 			})
-			console.log(prediction)
+
+			navigate("/dashboard/result", { state: { patient, prediction } })
 		},
 	})
+	if (!patient) {
+		return (
+			<div>This page was accessed incorrectly, make sure you were redirect from the home page.</div>
+		)
+	}
 	return (
-		<Flex 
-		gap={7}
-		wrap="wrap">
+		<Flex gap={7} wrap="wrap">
+			<Patients patients={patients} />
+			<Card w="lg">
+				<CardBody>
+					<Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
+						<Flex p={10} flex={1} justify={"flex-start"}>
+							<Stack spacing={4} w={"full"} maxW={"md"}>
+								<form onSubmit={form.handleSubmit}>
+									<Stack direction={["column", "row"]} spacing="24px" mb="10px"></Stack>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.alb}>
+										<FormLabel>Albumin test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.alb}
+											onChange={form.handleChange}
+											name="alb"
+										/>
+										<FormErrorMessage>{form.errors.alb}</FormErrorMessage>
+									</FormControl>
 
-<Card w="xs" backgroundColor='white'>
-								<CardBody>
-							<CardHeader><Card backgroundColor='lightblue' h='12' w='20vw'><Heading size='md'>MEDICAL HISTORY</Heading></Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.alk}>
+										<FormLabel>Alkaline phosphatase test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.alk}
+											onChange={form.handleChange}
+											name="alk"
+										/>
+										<FormErrorMessage>{form.errors.alk}</FormErrorMessage>
+									</FormControl>
 
-										
-						<CardHeader><Card backgroundColor='lightblue' w='20vw' h='12' size='md'><Heading size="md">
-										PATIENTS</Heading>
-									<Text>Search</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.ala}>
+										<FormLabel>Alanine aminotransferase test </FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.ala}
+											onChange={form.handleChange}
+											name="ala"
+										/>
+										<FormErrorMessage>{form.errors.ala}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Oke T.</b>
-									</Text> 
-									<Text>42 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.asp}>
+										<FormLabel>Aspartate aminotransferase test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.asp}
+											onChange={form.handleChange}
+											name="asp"
+										/>
+										<FormErrorMessage>{form.errors.asp}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Iyiade S.</b>
-									</Text>
-									<Text>21 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.bil}>
+										<FormLabel>Bilirubin</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.bil}
+											onChange={form.handleChange}
+											name="bil"
+										/>
+										<FormErrorMessage>{form.errors.bil}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-									Obatimehin R.</b>
-									</Text>
-									<Text>22 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.cho}>
+										<FormLabel>Cholinesterase test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.cho}
+											onChange={form.handleChange}
+											name="cho"
+										/>
+										<FormErrorMessage>{form.errors.cho}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Ilekoya D.</b>
-									</Text>
-									<Text>14 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.chol}>
+										<FormLabel>Cholesterol test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.chol}
+											onChange={form.handleChange}
+											name="chol"
+										/>
+										<FormErrorMessage>{form.errors.chol}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										GeorgE E.</b>
-									</Text>
-									<Text>19 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.crea}>
+										<FormLabel>Creatinine test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.crea}
+											onChange={form.handleChange}
+											name="crea"
+										/>
+										<FormErrorMessage>{form.errors.crea}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Oduwole O.</b>
-									</Text>
-									<Text>27 years</Text>
-									</Card></CardHeader>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.gamma}>
+										<FormLabel>Gamma glutamyl transferase</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.gamma}
+											onChange={form.handleChange}
+											name="gamma"
+										/>
+										<FormErrorMessage>{form.errors.gamma}</FormErrorMessage>
+									</FormControl>
 
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Olaiya K.</b>
-									</Text>
-									<Text>31 years</Text>
-									</Card></CardHeader>
-
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Adeleye M.</b>
-									</Text>
-									<Text>34 years</Text>
-									</Card></CardHeader>
-
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Raji I.</b>
-									</Text>
-									<Text>22 years</Text>
-									</Card></CardHeader>
-
-									<CardHeader><Card backgroundColor='lightblue' w='s' h='12' ><Text><b>
-										Ayodele A.</b>
-									</Text>
-									<Text>20 years</Text>
-									</Card></CardHeader>
-									</CardBody>
-									</Card>
-
-
-
-
-
-
-
-
-
-		<Card w="lg">
-			<CardBody>
-				<Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
-					<Flex p={10} flex={1} justify={"flex-start"}>
-						<Stack spacing={4} w={"full"} maxW={"md"}>
-							<form onSubmit={form.handleSubmit}>
-								<Stack direction={["column", "row"]} spacing="24px" mb="10px"></Stack>
-								<FormControl id="email" mb="10px" isInvalid={form.errors.alb}>
-									<FormLabel>Albumin test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.alb}
-										onChange={form.handleChange}
-										name="alb"
-									/>
-									<FormErrorMessage>{form.errors.alb}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.alk}>
-									<FormLabel>Alkaline phosphatase test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.alk}
-										onChange={form.handleChange}
-										name="alk"
-									/>
-									<FormErrorMessage>{form.errors.alk}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.ala}>
-									<FormLabel>Alanine aminotransferase test </FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.ala}
-										onChange={form.handleChange}
-										name="ala"
-									/>
-									<FormErrorMessage>{form.errors.ala}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.asp}>
-									<FormLabel>Aspartate aminotransferase test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.asp}
-										onChange={form.handleChange}
-										name="asp"
-									/>
-									<FormErrorMessage>{form.errors.asp}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.bil}>
-									<FormLabel>Bilirubin</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.bil}
-										onChange={form.handleChange}
-										name="bil"
-									/>
-									<FormErrorMessage>{form.errors.bil}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.cho}>
-									<FormLabel>Cholinesterase test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.cho}
-										onChange={form.handleChange}
-										name="cho"
-									/>
-									<FormErrorMessage>{form.errors.cho}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.chol}>
-									<FormLabel>Cholesterol test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.chol}
-										onChange={form.handleChange}
-										name="chol"
-									/>
-									<FormErrorMessage>{form.errors.chol}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.crea}>
-									<FormLabel>Creatinine test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.crea}
-										onChange={form.handleChange}
-										name="crea"
-									/>
-									<FormErrorMessage>{form.errors.crea}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.gamma}>
-									<FormLabel>Gamma glutamyl transferase</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.gamma}
-										onChange={form.handleChange}
-										name="gamma"
-									/>
-									<FormErrorMessage>{form.errors.gamma}</FormErrorMessage>
-								</FormControl>
-
-								<FormControl id="email" mb="10px" isInvalid={form.errors.prot}>
-									<FormLabel>Protein test</FormLabel>
-									<Input
-										type="number"
-										placeholder="Enter result"
-										value={form.values.prot}
-										onChange={form.handleChange}
-										name="prot"
-									/>
-									<FormErrorMessage>{form.errors.prot}</FormErrorMessage>
-								</FormControl>
-								<Button onClick={() => navigate("/dashboard/result")
-							}>SUBMIT</Button>
-								
-							</form>
-						</Stack>
-					</Flex>
-				</Stack>
-			</CardBody>
-		</Card>
+									<FormControl id="email" mb="10px" isInvalid={form.errors.prot}>
+										<FormLabel>Protein test</FormLabel>
+										<Input
+											type="number"
+											placeholder="Enter result"
+											value={form.values.prot}
+											onChange={form.handleChange}
+											name="prot"
+										/>
+										<FormErrorMessage>{form.errors.prot}</FormErrorMessage>
+									</FormControl>
+									<Button type="submit">SUBMIT</Button>
+								</form>
+							</Stack>
+						</Flex>
+					</Stack>
+				</CardBody>
+			</Card>
 		</Flex>
 	)
 }

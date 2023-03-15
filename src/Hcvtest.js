@@ -10,9 +10,7 @@ import {
 	FormErrorMessage,
 	Card,
 	CardBody,
-	CardHeader,
-	Text,
-	Heading,
+	
 } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import * as yup from "yup"
@@ -33,7 +31,7 @@ export default function Hcvtest() {
 		})
 
 		const prediction = await response.json()
-		return prediction.prediction.split("=")[1]
+		return prediction.prediction
 	}
 	const schema = yup.object().shape({
 		alb: yup.number().required("Albumin test result is required."),

@@ -3,7 +3,7 @@ import {
 	CardBody,
 	CardHeader,
 	CardFooter,
-	Heading,
+	
 	Text,
 	Button,
 	Flex,
@@ -44,9 +44,21 @@ export default function Result() {
 						<b>PATIENTS PROFILE</b>
 					</Text>
 					<CardHeader>
-						<Card backgroundColor="lightblue" w="s" h="200">
+						<Card backgroundColor="lightblue" w="s" h="150">
 							<Text>
-								<b>{patient.full_name}</b>
+							Full name:	<b>{patient.full_name}</b>
+							</Text>
+							<Text>
+							AGE:<b>{patient.age}</b>
+							</Text>
+							<Text>
+								GENDER: <b>{patient.gender}</b>
+							</Text>
+							<Text>
+								Bloodgroup: <b>{patient.bloodgroup}</b>
+							</Text>
+							<Text>
+								Genotype:<b>{patient.genotype}</b>
 							</Text>
 						</Card>
 					</CardHeader>
@@ -56,16 +68,13 @@ export default function Result() {
 					</Text>
 
 					<CardHeader>
-						<Card backgroundColor="lightblue" w="s" h="200">
+						<Card backgroundColor="lightblue" w="s" h="50">
 							<Text>
-								<b>{prediction}</b>
+							RESULT:	<b>{prediction}</b>
 							</Text>
 						</Card>
 					</CardHeader>
 				</CardBody>
-				<CardFooter>
-					<Button>Start</Button>
-				</CardFooter>
 			</Card>
 		</Flex>
 	)

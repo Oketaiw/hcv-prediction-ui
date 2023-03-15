@@ -33,7 +33,7 @@ export default function Home() {
 	})
 
 	const form = useFormik({
-		validationSchema: schema,
+		validationSchecoma: schema,
 		initialValues: {
 			full_name: "",
 			age: 0,
@@ -42,7 +42,7 @@ export default function Home() {
 			// date_of_birth: "",
 			gender: "",
 		},
-		onSubmit: (values) => {
+		onSubmit:(values) => {
 			console.log(values)
 			navigate("/dashboard/text", { state: { patient: values } })
 		},

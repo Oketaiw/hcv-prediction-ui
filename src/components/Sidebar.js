@@ -75,7 +75,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 	return (
 		<Box
 			transition="3s ease"
-			bg={useColorModeValue("white", "gray.900")}
+			bg={useColorModeValue("#e8e8e8", "gray.900")}
 			borderRight="1px"
 			borderRightColor={useColorModeValue(
 				"gray.200",
@@ -91,7 +91,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 				alignItems="center"
 				mx="8"
 				justifyContent="space-between"
-			>/
+			>
 				<CloseButton
 					display={{ base: "flex", md: "none" }}
 					onClick={onClose}

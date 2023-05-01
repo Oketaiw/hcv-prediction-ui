@@ -78,7 +78,7 @@ export default function Register() {
 		</Flex>
 	</Show>
 	<Flex 
-	 backgroundColor={"e8e8e8"}
+	 backgroundColor={"#e8e8e8"}
 	 flex={1}
 	 p={8}
 	 justify="center"
@@ -129,9 +129,14 @@ export default function Register() {
 								</FormErrorMessage>
 							</FormControl>
 						</Stack>
+
+						<Stack
+						direction={["column", "row"]}
+						spacing="24px"
+						mb="10px"
+						>
 						<FormControl
 							id="email"
-							mb="10px"
 							isInvalid={form.errors.email}
 						>
 							<FormLabel>Email</FormLabel>
@@ -146,6 +151,8 @@ export default function Register() {
 								{form.errors.email}
 							</FormErrorMessage>
 						</FormControl>
+						</Stack>
+
 						<Stack
 							direction={["column", "row"]}
 							spacing="24px"

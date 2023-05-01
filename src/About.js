@@ -31,11 +31,10 @@ export default function About() {
 		With the aid of Machine Learning for the model and React for the website.
 	</Text>
 </Card>
-			
 		
 			<Card>
 					<CardFooter>
-						<Button type="submit" onClick={() =>navigate("/dashboard/home")}>SUBMIT</Button>
+						<Button colorScheme={"purple"} type="next" onClick={() =>navigate("/dashboard/home")}>NEXT</Button>
 					</CardFooter>
 				
 			</Card>

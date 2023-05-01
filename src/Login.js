@@ -59,6 +59,7 @@ export default function Login() {
 			</Show>
 			<Flex
 			backgroundColor={"#e8e8e8"}
+			
 				p={8}
 				flex={1}
 				align={"center"}

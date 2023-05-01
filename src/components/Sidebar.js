@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 	return (
 		<Box
 			minH="100vh"
-			bg={useColorModeValue("e8e8e8", "e8e8e8")}
+			bg={useColorModeValue("#e8e8e8", "#e8e8e8")}
 		>
 			<SidebarContent
 				onClose={() => onClose}
@@ -78,8 +78,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderRight="1px"
 			borderRightColor={useColorModeValue(
-				"e8e8e8",
-				"e8e8e8"
+				"#e8e8e8",
+				"#e8e8e8"
 			)}
 			w={{ base: "full", md: 60 }}
 			pos="fixed"
@@ -192,8 +192,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderBottomWidth="1px"
 			borderBottomColor={useColorModeValue(
-				"e8e8e8",
-				"e8e8e8"
+				"#e8e8e8",
+				"#e8e8e8"
 			)}
 			justifyContent={{
 				base: "space-between",
@@ -246,7 +246,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 									ml="2"
 								>
 									<Text fontSize="sm">Justina Clark</Text>
-									<Text fontSize="xs" color="e8e8e8">
+									<Text fontSize="xs" color="#e8e8e8">
 										Admin
 									</Text>
 								</VStack>
@@ -256,10 +256,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
 							</HStack>
 						</MenuButton>
 						<MenuList
-							bg={useColorModeValue("white", "e8e8e8")}
+							bg={useColorModeValue("white", "#e8e8e8")}
 							borderColor={useColorModeValue(
-								"e8e8e8",
-								"e8e8e8"
+								"#e8e8e8",
+								"#e8e8e8"
 							)}
 						>
 							<MenuItem>Profile</MenuItem>

@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 	return (
 		<Box
 			minH="100vh"
-			bg={useColorModeValue("gray.100", "gray.900")}
+			bg={useColorModeValue("e8e8e8", "e8e8e8")}
 		>
 			<SidebarContent
 				onClose={() => onClose}
@@ -78,8 +78,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderRight="1px"
 			borderRightColor={useColorModeValue(
-				"gray.200",
-				"gray.700"
+				"e8e8e8",
+				"e8e8e8"
 			)}
 			w={{ base: "full", md: 60 }}
 			pos="fixed"
@@ -91,7 +91,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 				alignItems="center"
 				mx="8"
 				justifyContent="space-between"
-			>
+			>/
 				<CloseButton
 					display={{ base: "flex", md: "none" }}
 					onClick={onClose}
@@ -192,8 +192,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderBottomWidth="1px"
 			borderBottomColor={useColorModeValue(
-				"gray.200",
-				"gray.700"
+				"e8e8e8",
+				"e8e8e8"
 			)}
 			justifyContent={{
 				base: "space-between",
@@ -246,7 +246,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 									ml="2"
 								>
 									<Text fontSize="sm">Justina Clark</Text>
-									<Text fontSize="xs" color="gray.600">
+									<Text fontSize="xs" color="e8e8e8">
 										Admin
 									</Text>
 								</VStack>
@@ -256,10 +256,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
 							</HStack>
 						</MenuButton>
 						<MenuList
-							bg={useColorModeValue("white", "gray.900")}
+							bg={useColorModeValue("white", "e8e8e8")}
 							borderColor={useColorModeValue(
-								"gray.200",
-								"gray.700"
+								"e8e8e8",
+								"e8e8e8"
 							)}
 						>
 							<MenuItem>Profile</MenuItem>

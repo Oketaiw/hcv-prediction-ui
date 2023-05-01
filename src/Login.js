@@ -53,7 +53,7 @@ export default function Login() {
 					alignItems="center"
 				>
 					<Text fontSize="5xl">
-						Welcome To Diagnosis Portal{" "}
+						Welcome To Diagnosis {" "}
 					</Text>
 				</Flex>
 			</Show>

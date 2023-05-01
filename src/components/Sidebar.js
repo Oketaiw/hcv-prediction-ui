@@ -119,11 +119,11 @@ const NavItem = ({ icon, children, path,...rest }) => {
 			// activeClassName="active"
 			sx={{
 				textDecoration: "none",
-				backgroundColor: "blue.400",
+				backgroundColor: "#e8e8e8",
 			}}
 			_hover={{
 				textDecoration: "none",
-				// backgroundColor: "blue.400",
+				// backgroundColor: "#e8e8e8v",
 			}}
 		
 		>

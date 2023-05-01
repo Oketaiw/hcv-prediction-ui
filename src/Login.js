@@ -59,7 +59,7 @@ export default function Login() {
 			</Show>
 			<Flex
 			backgroundColor={"#e8e8e8"}
-			
+
 				p={8}
 				flex={1}
 				align={"center"}
@@ -119,7 +119,7 @@ export default function Login() {
 								justify={"space-between"}
 							>
 								<Checkbox>Remember me</Checkbox>
-								<Link color={"blue.500"}>
+								<Link color={"purple"}>
 									Forgot password?
 								</Link>
 							</Stack>

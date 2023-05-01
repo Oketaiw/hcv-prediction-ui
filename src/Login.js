@@ -58,7 +58,7 @@ export default function Login() {
 				</Flex>
 			</Show>
 			<Flex
-			backgroundColor={"gray.100"}
+			backgroundColor={"ass.100"}
 				p={8}
 				flex={1}
 				align={"center"}
@@ -123,7 +123,7 @@ export default function Login() {
 								</Link>
 							</Stack>
 							<Button
-								colorScheme={"blue"}
+								colorScheme={"purple"}
 								variant={"solid"}
 								type="submit"
 							>

@@ -19,11 +19,20 @@ export default function About() {
 	return (
 		<Flex
 		backgroundColor={"white"}
+		gap={7}
+			wrap="wrap"
 
-			
-			// justifyContent="space-between"
-			// templateColumns="repeat(auto-fill, 3fr)"
 		>
+<Card>
+	<Text>
+		Welcome
+		This website is a detection system for detecting hepatitis C virus amongst other related diseases.
+		It is developed by Oke Taiwo and Iyiade Suliat
+		With the aid of Machine Learning for the model and React for the website.
+	</Text>
+</Card>
+			
+		
 			<Card>
 					<CardFooter>
 						<Button type="submit" onClick={() =>navigate("/dashboard/home")}>SUBMIT</Button>

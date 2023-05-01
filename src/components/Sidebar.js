@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 	return (
 		<Box
 			minH="100vh"
-			bg={useColorModeValue("gray.100", "gray.900")}
+			bg={useColorModeValue("white", "white")}
 		>
 			<SidebarContent
 				onClose={() => onClose}

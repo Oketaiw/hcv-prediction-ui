@@ -53,12 +53,12 @@ export default function Login() {
 					alignItems="center"
 				>
 					<Text fontSize="5xl">
-						Welcome To Diagnosis {" "}
+						Welcome To Diagnosis Portal {" "}
 					</Text>
 				</Flex>
 			</Show>
 			<Flex
-			backgroundColor={"ass.100"}
+			backgroundColor={"#e8e8e8"}
 				p={8}
 				flex={1}
 				align={"center"}

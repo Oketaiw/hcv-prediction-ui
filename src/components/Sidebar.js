@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 	return (
 		<Box
 			minH="100vh"
-			bg={useColorModeValue("#e8e8e8", "#e8e8e8")}
+			bg={useColorModeValue("gray.100", "gray.900")}
 		>
 			<SidebarContent
 				onClose={() => onClose}
@@ -78,7 +78,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderRight="1px"
 			borderRightColor={useColorModeValue(
-				"#e8e8e8",
+				"gray.200",
 				"#e8e8e8"
 			)}
 			w={{ base: "full", md: 60 }}

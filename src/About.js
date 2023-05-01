@@ -18,6 +18,8 @@ export default function About() {
     })
 	return (
 		<Flex
+		backgroundColor={"white"}
+
 			gap={7}
 			wrap="wrap"
 			// justifyContent="space-between"

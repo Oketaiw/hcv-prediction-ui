@@ -78,7 +78,7 @@ export default function Register() {
 		</Flex>
 	</Show>
 	<Flex 
-	 backgroundColor={"gray"}
+	 backgroundColor={"#e8e8e8"}
 	 flex={1}
 	 p={8}
 	 justify="center"
@@ -232,12 +232,12 @@ export default function Register() {
 								justify={"space-between"}
 							>
 								<Checkbox>Remember me</Checkbox>
-								<Link color={"blue.500"}>
+								<Link color={"purple"}>
 									Forgot password?
 								</Link>
 							</Stack>
 							<Button
-								colorScheme={"blue"}
+								colorScheme={"purple"}
 								variant={"solid"}
 								type="submit"
 							>

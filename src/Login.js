@@ -58,7 +58,7 @@ export default function Login() {
 				</Flex>
 			</Show>
 			<Flex
-			backgroundColor={"gray"}
+			backgroundColor={"#e8e8e8"}
 
 				p={8}
 				flex={1}

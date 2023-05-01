@@ -20,8 +20,7 @@ export default function About() {
 		<Flex
 		backgroundColor={"white"}
 
-			gap={7}
-			wrap="wrap"
+			
 			// justifyContent="space-between"
 			// templateColumns="repeat(auto-fill, 3fr)"
 		>

@@ -13,7 +13,6 @@ import {
 	Text,
 	CardHeader,
 	Heading,
-	
 } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import * as yup from "yup"
@@ -21,7 +20,7 @@ import Patients from "components/PatientWrapper"
 import patients from "data/patients.json"
 export default function Hcvtest() {
 	const navigate = useNavigate()
-	const patient  = useLocation().state?.patient
+	const patient = useLocation().state?.patient
 
 	async function predict(predictionInput) {
 		console.log(predictionInput)
@@ -81,9 +80,9 @@ export default function Hcvtest() {
 	return (
 		<Flex gap={7} wrap="wrap">
 			<Card w="lg">
-			<CardHeader>
-						<Heading size="md"> TEST PAGE</Heading>
-					</CardHeader>
+				<CardHeader>
+					<Heading size="md"> TEST PAGE</Heading>
+				</CardHeader>
 				<CardBody>
 					<Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
 						<Flex p={10} flex={1} justify={"flex-start"}>
@@ -209,7 +208,9 @@ export default function Hcvtest() {
 										/>
 										<FormErrorMessage>{form.errors.prot}</FormErrorMessage>
 									</FormControl>
-									<Button type="submit" colorScheme={"purple"} w="400px">SUBMIT</Button>
+									<Button type="submit" colorScheme={"purple"} w="400px">
+										SUBMIT
+									</Button>
 								</form>
 							</Stack>
 						</Flex>

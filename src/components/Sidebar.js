@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
 	IconButton,
 	Avatar,
@@ -19,36 +19,30 @@ import {
 	MenuDivider,
 	MenuItem,
 	MenuList,
-} from "@chakra-ui/react";
-import {
-	FiHome,
-	FiMenu,
-	FiBell,
-	FiChevronDown,
-} from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+} from "@chakra-ui/react"
+import { FiHome, FiMenu, FiBell, FiChevronDown } from "react-icons/fi"
+import { BiTestTube } from "react-icons/bi"
+import { BsPerson } from "react-icons/bs"
+import { FaShieldVirus } from "react-icons/fa"
+import { NavLink } from "react-router-dom"
 // import { IconType } from "react-icons";
 // import { ReactText } from "react";
 
 const LinkItems = [
 	{ name: "Home", icon: FiHome, path: "app" },
+	{ name: "Patients", icon: BsPerson, path: "home" },
+	{ name: "Test", icon: BiTestTube, path: "text" },
 	// { name: "Trending", icon: FiTrendingUp },
 	// { name: "Explore", icon: FiCompass },
 	// { name: "Favourites", icon: FiStar },
 	// { name: "Settings", icon: FiSettings },
-];
+]
 
 export default function Layout({ children }) {
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	const { isOpen, onOpen, onClose } = useDisclosure()
 	return (
-		<Box
-			minH="100vh"
-			bg={useColorModeValue("white", "white")}
-		>
-			<SidebarContent
-				onClose={() => onClose}
-				display={{ base: "none", md: "block" }}
-			/>
+		<Box minH="100vh" bg={useColorModeValue("white", "white")}>
+			<SidebarContent onClose={() => onClose} display={{ base: "none", md: "block" }} />
 			<Drawer
 				autoFocus={false}
 				isOpen={isOpen}
@@ -68,7 +62,7 @@ export default function Layout({ children }) {
 				{children}
 			</Box>
 		</Box>
-	);
+	)
 }
 
 const SidebarContent = ({ onClose, ...rest }) => {
@@ -77,41 +71,46 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			transition="3s ease"
 			bg={useColorModeValue("#e8e8e8", "white")}
 			borderRight="1px"
-			borderRightColor={useColorModeValue(
-				"#e8e8e8",
-				"#e8e8e8"
-			)}
+			borderRightColor={useColorModeValue("#e8e8e8", "#e8e8e8")}
 			w={{ base: "full", md: 60 }}
 			pos="fixed"
 			h="full"
 			{...rest}
 		>
-			<Flex
-				h="20"
-				alignItems="center"
-				mx="8"
-				justifyContent="space-between"
-			>
-				<CloseButton
-					display={{ base: "flex", md: "none" }}
-					onClick={onClose}
-				/>
+			<Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+				<CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
 			</Flex>
-			{LinkItems.map((link) => (
-				// <NavLink
-                //     to={link.path}
-                //     activeClassName="active"
-				// >
+
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					padding: "1em 0 1.5em",
+				}}
+			>
+				<FaShieldVirus size={30} />
+			</div>
+			<div
+				style={{
+					padding: "0 1.5em",
+				}}
+			>
+				{LinkItems.map((link) => (
+					// <NavLink
+					//     to={link.path}
+					//     activeClassName="active"
+					// >
 					<NavItem key={link.name} icon={link.icon} path={link.path}>
 						{link.name}
 					</NavItem>
-				//  </NavLink>
-			))}
+					//  </NavLink>
+				))}
+			</div>
 		</Box>
-	);
-};
+	)
+}
 
-const NavItem = ({ icon, children, path,...rest }) => {
+const NavItem = ({ icon, children, path, ...rest }) => {
 	return (
 		<Link
 			as={NavLink}
@@ -125,7 +124,6 @@ const NavItem = ({ icon, children, path,...rest }) => {
 				textDecoration: "none",
 				// backgroundColor: "#e8e8e8v",
 			}}
-		
 		>
 			{({ isActive }) => (
 				<Flex
@@ -146,41 +144,36 @@ const NavItem = ({ icon, children, path,...rest }) => {
 						<Icon
 							mr="4"
 							fontSize="16"
-							_groupHover={{
-								// color: "white",
-							}}
+							_groupHover={
+								{
+									// color: "white",
+								}
+							}
 							as={icon}
 						/>
 					)}
 					{children}
 				</Flex>
 			)}
-			
-			<Flex
-					align="center"
-					p="2"
-					mx="2"
-					borderRadius="md"
-					role="group"
-					cursor="pointer"
-				
-					{...rest}
-				>
-					{icon && (
-						<Icon
-							mr="4"
-							fontSize="16"
-							_groupHover={{
+
+			<Flex align="center" p="2" mx="2" borderRadius="md" role="group" cursor="pointer" {...rest}>
+				{icon && (
+					<Icon
+						mr="4"
+						fontSize="16"
+						_groupHover={
+							{
 								// color: "white",
-							}}
-							as={icon}
-						/>
-					)}
-					{children}
-				</Flex>
+							}
+						}
+						as={icon}
+					/>
+				)}
+				{children}
+			</Flex>
 		</Link>
-	);
-};
+	)
+}
 
 const MobileNav = ({ onOpen, ...rest }) => {
 	return (
@@ -191,10 +184,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 			alignItems="center"
 			bg={useColorModeValue("white", "gray.900")}
 			borderBottomWidth="1px"
-			borderBottomColor={useColorModeValue(
-				"#e8e8e8",
-				"#e8e8e8"
-			)}
+			borderBottomColor={useColorModeValue("#e8e8e8", "#e8e8e8")}
 			justifyContent={{
 				base: "space-between",
 				md: "flex-end",
@@ -219,19 +209,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
 			</Text>
 
 			<HStack spacing={{ base: "0", md: "6" }}>
-				<IconButton
-					size="lg"
-					variant="ghost"
-					aria-label="open menu"
-					icon={<FiBell />}
-				/>
+				<IconButton size="lg" variant="ghost" aria-label="open menu" icon={<FiBell />} />
 				<Flex alignItems={"center"}>
 					<Menu>
-						<MenuButton
-							py={2}
-							transition="all 0.3s"
-							_focus={{ boxShadow: "none" }}
-						>
+						<MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: "none" }}>
 							<HStack>
 								<Avatar
 									size={"sm"}
@@ -257,10 +238,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 						</MenuButton>
 						<MenuList
 							bg={useColorModeValue("white", "#e8e8e8")}
-							borderColor={useColorModeValue(
-								"#e8e8e8",
-								"#e8e8e8"
-							)}
+							borderColor={useColorModeValue("#e8e8e8", "#e8e8e8")}
 						>
 							<MenuItem>Profile</MenuItem>
 							<MenuItem>Settings</MenuItem>
@@ -272,5 +250,5 @@ const MobileNav = ({ onOpen, ...rest }) => {
 				</Flex>
 			</HStack>
 		</Flex>
-	);
-};
+	)
+}

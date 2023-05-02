@@ -28,7 +28,7 @@ export default function About() {
 		Welcome
 		This website is a detection system for detecting hepatitis C virus amongst other related diseases.
 		It is developed by Oke Taiwo and Iyiade Suliat
-		With the aid of Machine Learning for the model and React for the website.taiwogt 
+		With the aid of Machine Learning for the model and React for the website.taiwogt jiyuyrrewwssd
 	</Text>
 </Card>
 		

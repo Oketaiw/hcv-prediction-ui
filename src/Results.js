@@ -31,12 +31,7 @@ export default function Result() {
 			// justifyContebt="space-between"
 			// templateColumns="repeat(auto-fill, 3fr)"
 		>
-			<Card w="xs" backgroundColor="white">
-				<Patients patients={patients} />
-				<CardFooter>
-					<Button>Start</Button>
-				</CardFooter>
-			</Card>
+			
 
 			<Card w="xl" h="1200">
 				<CardBody>
@@ -44,18 +39,18 @@ export default function Result() {
 						<b>PATIENTS PROFILE</b>
 					</Text>
 					<CardHeader>
-						<Card backgroundColor="lightblue" w="s" h="150">
+						<Card backgroundColor="white" w="s" h="150">
 							<Text>
-							Full name:	<b>{patient.full_name}</b>
+							Patients name:	<b>{patient.full_name}</b>
 							</Text>
 							<Text>
-							AGE:<b>{patient.age}</b>
+							Patient Age:<b>{patient.age}</b>
 							</Text>
 							<Text>
-								GENDER: <b>{patient.gender}</b>
+								Gender: <b>{patient.gender}</b>
 							</Text>
 							<Text>
-								Bloodgroup: <b>{patient.bloodgroup}</b>
+								Blood Group: <b>{patient.bloodgroup}</b>
 							</Text>
 							<Text>
 								Genotype:<b>{patient.genotype}</b>
@@ -64,13 +59,13 @@ export default function Result() {
 					</CardHeader>
 
 					<Text>
-						<b>DETAILED DIAGNOSIS</b>
+						<b>Diagnosis</b>
 					</Text>
 
 					<CardHeader>
-						<Card backgroundColor="lightblue" w="s" h="50">
-							<Text>
-							RESULT:	<b>{prediction}</b>
+						<Card backgroundColor="white" w="s" h="50">
+							<Text colorScheme="red">
+							RESULT:	<b> {prediction}</b>
 							</Text>
 						</Card>
 					</CardHeader>

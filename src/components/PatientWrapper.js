@@ -16,20 +16,15 @@ import {
 export default function Patients({ showText, patients, onSelect }) {
 	return (
 		<Card w="xs" backgroundColor="white">
-			{showText && <Text>View a summary of all your customers over the last month</Text>}
+			{showText && <Text> <b>View a summary of all your customers over the last month</b></Text>}
 			<CardBody>
 				<CardHeader>
-					<Card backgroundColor="lightblue" h="12" w="20vw">
+					<Card backgroundColor="#e8e8e8" h="12" w="20vw">
 						<Heading size="md">MEDICAL HISTORY</Heading>
 					</Card>
 				</CardHeader>
 
-				<CardHeader>
-					<Card backgroundColor="lightblue" w="20vw" h="12" size="md">
-						<Heading size="md">PATIENTS</Heading>
-						<Text>Search</Text>
-					</Card>
-				</CardHeader>
+				
 				{patients.map(({ name, age, gender, bloodGroup, genotype }, idx) => {
 					return (
 						<CardHeader
@@ -43,7 +38,7 @@ export default function Patients({ showText, patients, onSelect }) {
 							}}
 							key={idx}
 						>
-							<Card backgroundColor="lightblue" w="s" h="12">
+							<Card backgroundColor="#e8e8e8" w="s" h="12">
 								<Text>
 									<b>{name}</b>
 								</Text>

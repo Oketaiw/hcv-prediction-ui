@@ -54,25 +54,12 @@ export default function Home() {
 			// justifyContent="space-between"
 			// templateColumns="repeat(auto-fill, 3fr)"
 		>
-			<Patients
-				showText
-				patients={patients}
-				onSelect={({ age, name, gender, genotype, bloodGroup }) => {
-					// console.log(age, name, gender, bloodGroup, genotype)
-					form.setValues({
-						age,
-						full_name: name,
-						gender,
-						genotype: genotype,
-						bloodgroup: bloodGroup,
-					})
-				}}
-			/>
+			
 
 			<Card w="lg">
 				<form onSubmit={form.handleSubmit}>
 					<CardHeader>
-						<Heading size="md">INPUT PATIENT PROFILE</Heading>
+						<Heading size="md"> PATIENT PROFILE</Heading>
 					</CardHeader>
 					<CardBody>
 						<Stack spacing={4} w={"full"} maxW={"md"}>
@@ -148,10 +135,26 @@ export default function Home() {
 						</Stack>
 					</CardBody>
 					<CardFooter>
-						<Button type="submit">SUBMIT</Button>
+						<Button type="submit" colorScheme={"purple"} w="450px">SUBMIT</Button>
 					</CardFooter>
 				</form>
 			</Card>
+
+			<Patients
+				showText
+				patients={patients}
+				onSelect={({ age, name, gender, genotype, bloodGroup }) => {
+					// console.log(age, name, gender, bloodGroup, genotype)
+					form.setValues({
+						age,
+						full_name: name,
+						gender,
+						genotype: genotype,
+						bloodgroup: bloodGroup,
+					})
+				}}
+			/>
+
 		</Flex>
 	)
 }

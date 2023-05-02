@@ -10,6 +10,9 @@ import {
 	FormErrorMessage,
 	Card,
 	CardBody,
+	Text,
+	CardHeader,
+	Heading,
 	
 } from "@chakra-ui/react"
 import { useFormik } from "formik"
@@ -77,8 +80,10 @@ export default function Hcvtest() {
 	}
 	return (
 		<Flex gap={7} wrap="wrap">
-			<Patients patients={patients} />
 			<Card w="lg">
+			<CardHeader>
+						<Heading size="md"> TEST PAGE</Heading>
+					</CardHeader>
 				<CardBody>
 					<Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
 						<Flex p={10} flex={1} justify={"flex-start"}>
@@ -204,7 +209,7 @@ export default function Hcvtest() {
 										/>
 										<FormErrorMessage>{form.errors.prot}</FormErrorMessage>
 									</FormControl>
-									<Button type="submit">SUBMIT</Button>
+									<Button type="submit" colorScheme={"purple"} w="400px">SUBMIT</Button>
 								</form>
 							</Stack>
 						</Flex>

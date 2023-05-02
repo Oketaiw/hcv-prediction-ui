@@ -28,46 +28,13 @@
 		"bloodGroup": "O+",
 		"genotype": "AA"
 	},
-	{
-		"name": "George E.",
-		"age": "19",
-		"gender": "male",
-		"bloodGroup": "O+",
-		"genotype": "AA"
-	},
+	
 	{
 		"name": "Oduwole O.",
 		"age": "27",
 		"gender": "male",
 		"bloodGroup": "O+",
 		"genotype": "AA"
-	},
-	{
-		"name": "Olaiya K.",
-		"age": "31",
-		"gender": "male",
-		"bloodGroup": "O+",
-		"genotype": "AA"
-	},
-	{
-		"name": "Adeleye M.",
-		"age": "34",
-		"gender": "male",
-		"bloodGroup": "O+",
-		"genotype": "AA"
-	},
-	{
-		"name": "Raji I.",
-		"age": "22",
-		"gender": "male",
-		"bloodGroup": "O+",
-		"genotype": "AA"
-	},
-	{
-		"name": "Ayodele A.",
-		"age": "20",
-		"gender": "male",
-		"bloodGroup": "O+",
-		"genotype": "AA"
 	}
+	
 ]

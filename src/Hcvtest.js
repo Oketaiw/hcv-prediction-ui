@@ -79,7 +79,8 @@ export default function Hcvtest() {
 	}
 	return (
 		<Flex gap={7} wrap="wrap">
-			<Card w="lg">
+			<Card w="10000px" h="1200"> <img src={"./images/image 2.png"}/>	
+				<form onSubmit={form.handleSubmit}></form>
 				<CardHeader>
 					<Heading size="md"> TEST PAGE</Heading>
 				</CardHeader>

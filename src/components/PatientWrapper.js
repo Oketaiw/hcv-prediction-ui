@@ -15,13 +15,11 @@ import {
 
 export default function Patients({ showText, patients, onSelect }) {
 	return (
-		<Card w="xs" backgroundColor="white">
+		<Card w="400px" backgroundColor="white">
 			{showText && <Text> <b>View a summary of all your customers over the last month</b></Text>}
 			<CardBody>
-				<CardHeader>
-					<Card backgroundColor="#e8e8e8" h="12" w="20vw">
-						<Heading size="md">MEDICAL HISTORY</Heading>
-					</Card>
+				<CardHeader backgroundColor="white" h="7" w="300">
+						<Text><b>Patient information</b></Text>
 				</CardHeader>
 
 				

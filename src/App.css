@@ -25,9 +25,15 @@
 }
 
 .App-link {
-	color: #61dafb;
+	color: #e8e8e8;
 }
 
+ /*.bg{
+	background-image: url(./Rectangle\ 12.png) ;
+	width:200px;
+	height:200px;
+	background-size: cover;
+}
 /* .active {
 	background: #e21919;
 	color: rgb(229, 221, 221);

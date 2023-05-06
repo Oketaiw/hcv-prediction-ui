@@ -21,8 +21,8 @@ import {
 	MenuList,
 } from "@chakra-ui/react"
 import { FiHome, FiMenu, FiBell, FiChevronDown } from "react-icons/fi"
-import { BiTestTube } from "react-icons/bi"
-import { BsPerson } from "react-icons/bs"
+import { BiBook, BiTestTube } from "react-icons/bi"
+import { BsPerson, BsPersonSquare } from "react-icons/bs"
 import { FaShieldVirus } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
 // import { IconType } from "react-icons";
@@ -30,8 +30,9 @@ import { NavLink } from "react-router-dom"
 
 const LinkItems = [
 	{ name: "Home", icon: FiHome, path: "app" },
-	{ name: "Patients", icon: BsPerson, path: "home" },
-	{ name: "Test", icon: BiTestTube, path: "text" },
+	{ name: "About", icon: BsPersonSquare, path: "about" },
+	{ name: "Patients Profile", icon: BsPerson, path: "home" },
+	{ name: "Records", icon: BiBook, path: "patients" },
 	// { name: "Trending", icon: FiTrendingUp },
 	// { name: "Explore", icon: FiCompass },
 	// { name: "Favourites", icon: FiStar },

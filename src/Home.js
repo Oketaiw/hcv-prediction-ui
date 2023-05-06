@@ -1,3 +1,4 @@
+
 import {
 	Card,
 	CardBody,
@@ -56,7 +57,8 @@ export default function Home() {
 		>
 			
 
-			<Card w="lg">
+			
+			<Card w="10000px" h="1200"> <img src={"./images/Rectangle 12 (1).png"}/>	
 				<form onSubmit={form.handleSubmit}>
 					<CardHeader>
 						<Heading size="md"> PATIENT PROFILE</Heading>
@@ -139,22 +141,6 @@ export default function Home() {
 					</CardFooter>
 				</form>
 			</Card>
-
-			<Patients
-				showText
-				patients={patients}
-				onSelect={({ age, name, gender, genotype, bloodGroup }) => {
-					// console.log(age, name, gender, bloodGroup, genotype)
-					form.setValues({
-						age,
-						full_name: name,
-						gender,
-						genotype: genotype,
-						bloodgroup: bloodGroup,
-					})
-				}}
-			/>
-
 		</Flex>
 	)
 }

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import {
 	Card,
 	CardBody,
@@ -7,6 +8,9 @@ import {
 	Text,
 	Button,
 	Flex,
+	
+
+	
 } from "@chakra-ui/react"
 import Patients from "components/PatientWrapper"
 import React from "react"
@@ -14,13 +18,15 @@ import patients from "data/patients.json"
 import { useLocation } from "react-router-dom"
 
 export default function Result() {
+	const navigate = useNavigate()
 	const location = useLocation()
 
-	const patient = location.state?.patient
-	const prediction = location.state?.prediction
+const patient = location.state?.patient
+const prediction =location.state?.prediction
 
-	if (!patient || !prediction) {
+	if (!patient || !prediction){
 		return (
+
 			<div>This page was accessed incorrectly, make sure you were redirect from the test page.</div>
 		)
 	}
@@ -32,8 +38,7 @@ export default function Result() {
 			// templateColumns="repeat(auto-fill, 3fr)"
 		>
 			
-
-			<Card w="xl" h="1200">
+			<Card w="xl" h="1200"> <img src={"./images/image 5.png"}/>	
 				<CardBody>
 					<Text>
 						<b>PATIENTS PROFILE</b>
@@ -69,6 +74,9 @@ export default function Result() {
 							</Text>
 						</Card>
 					</CardHeader>
+					<CardFooter>
+						<Button colorScheme={"purple"} type="next"  w="400px" onClick={() =>navigate("/dashboard/patients")}>Save</Button>
+					</CardFooter>
 				</CardBody>
 			</Card>
 		</Flex>

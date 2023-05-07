@@ -1,7 +1,4 @@
-import {
-	Flex,
-	
-} from "@chakra-ui/react"
+import { Flex } from "@chakra-ui/react"
 import React from "react"
 
 import { useFormik } from "formik"
@@ -30,17 +27,25 @@ export default function Home() {
 			// date_of_birth: "",
 			gender: "",
 		},
-		
+
+		onSubmit: (values) => {
+			console.log(values)
+			navigate("/dashboard/text", { state: { patient: values } })
+		},
 	})
 	return (
 		<Flex
-			gap={7}
+			gap={5}
 			wrap="wrap"
 			// justifyContent="space-between"
 			// templateColumns="repeat(auto-fill, 3fr)"
+			background="url('/images/Rectangle 12 (1).png')"
+			p="4"
 		>
-				
-			<Patients  img src={"./images/blob 1.png"} w="xl" h="1200"
+			<Patients
+				// src={"./images/blob 1.png"}
+				w="xl"
+				h="1200"
 				showText
 				patients={patients}
 				onSelect={({ age, name, gender, genotype, bloodGroup }) => {
@@ -52,9 +57,10 @@ export default function Home() {
 						genotype: genotype,
 						bloodgroup: bloodGroup,
 					})
+
+					form.submitForm()
 				}}
 			/>
-
 		</Flex>
 	)
 }

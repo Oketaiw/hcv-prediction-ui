@@ -1,4 +1,3 @@
-
 import {
 	Card,
 	CardBody,
@@ -43,22 +42,23 @@ export default function Home() {
 			// date_of_birth: "",
 			gender: "",
 		},
-		onSubmit:(values) => {
+		onSubmit: (values) => {
 			console.log(values)
 			navigate("/dashboard/text", { state: { patient: values } })
 		},
 	})
 	return (
 		<Flex
-			gap={7}
+			gap={5}
 			wrap="wrap"
-			// justifyContent="space-between"
+			background="url('/images/Rectangle 12 (1).png')"
+			backgroundSize="cover"
+			p="4"
+			justifyContent="space-between"
 			// templateColumns="repeat(auto-fill, 3fr)"
 		>
-			
-
-			
-			<Card w="10000px" h="1200"> <img src={"./images/Rectangle 12 (1).png"}/>	
+			<Card background="none">
+				{" "}
 				<form onSubmit={form.handleSubmit}>
 					<CardHeader>
 						<Heading size="md"> PATIENT PROFILE</Heading>
@@ -137,7 +137,9 @@ export default function Home() {
 						</Stack>
 					</CardBody>
 					<CardFooter>
-						<Button type="submit" colorScheme={"purple"} w="450px">SUBMIT</Button>
+						<Button type="submit" colorScheme={"purple"} w="450px">
+							SUBMIT
+						</Button>
 					</CardFooter>
 				</form>
 			</Card>

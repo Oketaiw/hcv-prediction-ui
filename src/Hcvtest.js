@@ -74,12 +74,25 @@ export default function Hcvtest() {
 	})
 	if (!patient) {
 		return (
-			<div>This page was accessed incorrectly, make sure you were redirect from the home page.</div>
+			<div
+				style={{
+					padding: "1em",
+				}}
+			>
+				This page was accessed incorrectly, make sure you were redirect from the home page.
+			</div>
 		)
 	}
 	return (
-		<Flex gap={7} wrap="wrap">
-			<Card w="10000px" h="1200"> <img src={"./images/image 2.png"}/>	
+		<Flex
+			gap={6}
+			wrap="wrap"
+			background="linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/image 2.jpg')"
+			backgroundSize="cover"
+			p="4"
+		>
+			<Card background={"none"} color="white">
+				{" "}
 				<form onSubmit={form.handleSubmit}></form>
 				<CardHeader>
 					<Heading size="md"> TEST PAGE</Heading>
